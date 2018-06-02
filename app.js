@@ -91,7 +91,7 @@ $("#start").click(function(){
     }      
 });
 $("#b0").click(function() {
-    if (end === false){
+    if (end === false && lightsOn === false){
         let answer = $(this).attr("value");
         let intAnswer = parseInt(answer);
         answerL.push(intAnswer);  
@@ -100,7 +100,7 @@ $("#b0").click(function() {
     }  
 });
 $("#b1").click(function() {
-    if (end === false){
+    if (end === false && lightsOn === false){
         let answer = $(this).attr("value");
         let intAnswer = parseInt(answer);
         answerL.push(intAnswer);
@@ -109,7 +109,7 @@ $("#b1").click(function() {
     }   
 });
 $("#b2").click(function() {
-    if (end === false){
+    if (end === false && lightsOn === false){
         let answer = $(this).attr("value");
         let intAnswer = parseInt(answer);
         answerL.push(intAnswer);
@@ -118,7 +118,7 @@ $("#b2").click(function() {
     }   
 });
 $("#b3").click(function() {
-    if (end === false){
+    if (end === false && lightsOn === false){
         let answer = $(this).attr("value");
         let intAnswer = parseInt(answer);
         answerL.push(intAnswer);
