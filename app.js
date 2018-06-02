@@ -18,7 +18,6 @@ function colorGray(){
     $('#b2').attr('style',' ');
     $('#b3').attr('style',' ');
 }
-
 function winCondition(){
     if (answerL.length === level){
         let answer1 = answerL.toString();
@@ -28,13 +27,13 @@ function winCondition(){
             level++;
             wins++;
             $('#yourWins').text(wins);
+            $('#yourLevel').text(level - 3);
             $('#winOrLose').text('You win! Press start to begin next level.');
         } else {
             $('#winOrLose').text('You lose try again or start over!');
         }
     }
 }
-
 var counter = function() {
     intervalId = setInterval(z, 1000);
     function z(){
@@ -50,16 +49,10 @@ var counter = function() {
             colorGray();            
         }
 }}
-
-
-
-
-
-
 //On click events
 $("#start").click(function(){
     $('#winOrLose').text('');
-    seconds = 4;
+    seconds = level;
     answerL = [];
     randomArr = [];
     win = false;
@@ -72,96 +65,30 @@ $("#start").click(function(){
         randomC = randomize;        
     } 
     console.log(randomArr);
-    counter();   
-    
+    counter();       
 });
-
 $("#b0").click(function() {
     let answer = $(this).attr("value");
     let intAnswer = parseInt(answer);
-    answerL.push(intAnswer);
-   
-        winCondition();
-    
+    answerL.push(intAnswer);   
+        winCondition();    
 });
 $("#b1").click(function() {
     let answer = $(this).attr("value");
     let intAnswer = parseInt(answer);
     answerL.push(intAnswer);
-        winCondition();
-    
+        winCondition();    
 });
 $("#b2").click(function() {
     let answer = $(this).attr("value");
     let intAnswer = parseInt(answer);
     answerL.push(intAnswer);
-        winCondition();
-    
+        winCondition();    
 });
 $("#b3").click(function() {
     let answer = $(this).attr("value");
     let intAnswer = parseInt(answer);
     answerL.push(intAnswer);
         winCondition();
-
 });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-});
+});//end document
