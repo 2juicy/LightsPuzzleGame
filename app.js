@@ -57,7 +57,10 @@ var counter = function() {
     function z(){
         if (seconds > 0){
             seconds--;
-            colorGray();
+            $('#b0').css('background','gray');
+            $('#b1').css('background','gray');
+            $('#b2').css('background','gray');
+            $('#b3').css('background','gray');
             $("#b" + randomArr[arrayCount]).css('background', backgroundArr[randomArr[arrayCount]]);
             arrayCount++;
         } else if (seconds == 0) {

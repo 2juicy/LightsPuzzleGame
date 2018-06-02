@@ -17,6 +17,7 @@ span{
     font-family: monospace;
     font-size: 20px;
     font-style: italic;
+    color: darkslategray;
 }
 #winOrLose{
     font-size: 22px;
@@ -95,6 +96,7 @@ span{
     font-size: 20px;
     margin-bottom: 5px;
     display: inline-block;
+    animation: colorchange 2s infinite;
     box-shadow: 0px 3px 8px white;
 }
 #start:hover{
@@ -102,6 +104,21 @@ span{
 }
 #start:active{
     opacity: 0.2;
-    background: transparent;
     transform: translateY(3px);
 }
+@keyframes colorchange
+    {
+      0%   {background: #33cccc;}
+      25%  {background: rgb(229, 255, 0);}
+      50%  {background: #334fcc;}
+      75%  {background: rgb(73, 146, 175);}
+      100% {background: rgb(170, 228, 77);}
+    }
+    @-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
+    {
+      0%   {background: #33cccc;}
+      25%  {background: rgb(229, 255, 0);}
+      50%  {background: #334fcc;}
+      75%  {background: green;}
+      100% {background: rgb(170, 228, 77);}
+    }
