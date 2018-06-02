@@ -93,7 +93,7 @@ $("#start").click(function(){
         counter(); 
     }      
 });
-$("#b0").click(function() {
+$("#b0 , #b1 , #b2 , #b3").click(function() {
     if (end === false && lightsOn === false){
         let answer = $(this).attr("value");
         let intAnswer = parseInt(answer);
@@ -101,32 +101,5 @@ $("#b0").click(function() {
         guessTrack(); 
         winCondition();  
     }  
-});
-$("#b1").click(function() {
-    if (end === false && lightsOn === false){
-        let answer = $(this).attr("value");
-        let intAnswer = parseInt(answer);
-        answerL.push(intAnswer);
-        guessTrack()
-        winCondition(); 
-    }   
-});
-$("#b2").click(function() {
-    if (end === false && lightsOn === false){
-        let answer = $(this).attr("value");
-        let intAnswer = parseInt(answer);
-        answerL.push(intAnswer);
-        guessTrack()
-        winCondition(); 
-    }   
-});
-$("#b3").click(function() {
-    if (end === false && lightsOn === false){
-        let answer = $(this).attr("value");
-        let intAnswer = parseInt(answer);
-        answerL.push(intAnswer);
-        guessTrack()
-        winCondition();
-    }
 });
 });//end document
