@@ -2,7 +2,6 @@
 	margin: 0;
 	padding: 0;
     font-family: 'Shadows Into Light', cursive;
-    background: black;
     color: white;
     text-shadow: -1px -1px 1px #aaa,
             1px 1px 1px white,
@@ -49,7 +48,7 @@ span{
 .button {
     border: 0;
     height: 225px;
-    width: 250px;
+    width: 225px;
     display: inline-block;
     margin: 0px 2px 0px 2px;
     box-shadow: 0px 3px 8px #43484c;
