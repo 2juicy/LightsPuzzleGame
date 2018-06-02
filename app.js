@@ -9,6 +9,7 @@ var seconds = 4;
 var level = 4;
 var tries = 0;
 var end = true;
+var lightsOn = false;
 //Document check
 $(document).ready(function() {
     var intervalId;
@@ -62,28 +63,32 @@ var counter = function() {
         } else if (seconds == 0) {
             clearInterval(intervalId);
             seconds = level;
+            lightsOn = false;
             arrayCount = 0;
             colorGray();            
         }
 }}
 //On click events
 $("#start").click(function(){
-    $('#winOrLose').text('');
-    $('#yourGuess').empty();
-    seconds = level;
-    answerL = [];
-    randomArr = [];
-    end = false;
-    colorGray();
-    for (let i = 0; i < level; i++){  
-        do {
-            randomize = (Math.floor(Math.random() * 4)); 
-        } while (randomize === randomC);
-        randomArr.push(randomize);
-        randomC = randomize;        
-    } 
-    console.log(randomArr);
-    counter();       
+    if (lightsOn === false){
+        lightsOn = true;
+        $('#winOrLose').text('');
+        $('#yourGuess').empty();
+        seconds = level;
+        answerL = [];
+        randomArr = [];
+        end = false;
+        colorGray();
+        for (let i = 0; i < level; i++){  
+            do {
+                randomize = (Math.floor(Math.random() * 4)); 
+            } while (randomize === randomC);
+            randomArr.push(randomize);
+            randomC = randomize;        
+        } 
+        console.log(randomArr);
+        counter(); 
+    }      
 });
 $("#b0").click(function() {
     if (end === false){
