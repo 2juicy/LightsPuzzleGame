@@ -133,9 +133,6 @@ span{
     }
 }
     @media screen and (max-width: 789px) {
-    .container{
-        float: left;
-    }
     .button {
         height: 270px;
         width: 270px;
@@ -144,9 +141,6 @@ span{
     }
 }
     @media screen and (max-width: 550px) {
-     .container{
-        float: left;
-    }
     .button {
         height: 200px;
         width: 200px;
@@ -155,9 +149,6 @@ span{
     }   
 }
 @media screen and (max-width: 420px) {
-     .container{
-        float: left;
-    }
     .button {
         height: 155px;
         width: 155px;
