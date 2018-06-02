@@ -45,6 +45,7 @@ function guessTrack(){
         $('#yourGuess').append(' X');
     } else if (answerL.length === 1){
         $('#yourGuess').empty();
+        $('#winOrLose').text('');
         $('#yourGuess').append(' X');
     } else {
         $('#yourGuess').append(' X');
