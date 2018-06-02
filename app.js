@@ -8,6 +8,7 @@ var backgroundArr = ['green','red','blue','yellow'];
 var seconds = 4;
 var level = 4;
 var wins = 0;
+var end = false;
 //Document check
 $(document).ready(function() {
     var intervalId;
@@ -29,8 +30,10 @@ function winCondition(){
             $('#yourWins').text(wins);
             $('#yourLevel').text(level - 3);
             $('#winOrLose').text('You win! Press start to begin next level.');
+            end = true;
         } else {
             $('#winOrLose').text('You lose try again or start over!');
+            answerL = [];
         }
     }
 }
@@ -55,7 +58,7 @@ $("#start").click(function(){
     seconds = level;
     answerL = [];
     randomArr = [];
-    win = false;
+    end = false;
     colorGray();
     for (let i = 0; i < level; i++){  
         do {
@@ -68,27 +71,35 @@ $("#start").click(function(){
     counter();       
 });
 $("#b0").click(function() {
-    let answer = $(this).attr("value");
-    let intAnswer = parseInt(answer);
-    answerL.push(intAnswer);   
-        winCondition();    
+    if (end === false){
+        let answer = $(this).attr("value");
+        let intAnswer = parseInt(answer);
+        answerL.push(intAnswer);   
+        winCondition();  
+    }  
 });
 $("#b1").click(function() {
-    let answer = $(this).attr("value");
-    let intAnswer = parseInt(answer);
-    answerL.push(intAnswer);
-        winCondition();    
+    if (end === false){
+        let answer = $(this).attr("value");
+        let intAnswer = parseInt(answer);
+        answerL.push(intAnswer);
+        winCondition(); 
+    }   
 });
 $("#b2").click(function() {
-    let answer = $(this).attr("value");
-    let intAnswer = parseInt(answer);
-    answerL.push(intAnswer);
-        winCondition();    
+    if (end === false){
+        let answer = $(this).attr("value");
+        let intAnswer = parseInt(answer);
+        answerL.push(intAnswer);
+        winCondition(); 
+    }   
 });
 $("#b3").click(function() {
-    let answer = $(this).attr("value");
-    let intAnswer = parseInt(answer);
-    answerL.push(intAnswer);
+    if (end === false){
+        let answer = $(this).attr("value");
+        let intAnswer = parseInt(answer);
+        answerL.push(intAnswer);
         winCondition();
+    }
 });
 });//end document
