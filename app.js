@@ -45,6 +45,7 @@ var counter = function() {
             seconds = 4;
             arrayCount = 0;
             randomArr = [];
+            colorGray();
         }
 }}
 
@@ -61,8 +62,7 @@ $("#start").click(function(){
             randomize = (Math.floor(Math.random() * 4)); 
         } while (randomize === randomC);
         randomArr.push(randomize);
-        randomC = randomize;
-        console.log(randomArr);        
+        randomC = randomize;        
     } 
     counter();
     randomize = (Math.floor(Math.random() * 4));        
