@@ -25,7 +25,6 @@
 .center, h1{
 	text-align: center;	
 }
-
 .button {
     height: 225px;
     width: 250px;
@@ -33,9 +32,38 @@
     margin: 0px 2px 0px 2px;
     box-shadow: 0px 3px 8px #43484c;
     border-radius: 15px 5px 15px 5px;
+    background: gray;
     }
 .button:nth-child(even){
     border-radius: 5px 15px 5px 15px;
+}
+#b0:hover{
+    border: solid 1px green;
+}
+#b0:active{
+    background: green;
+    transform: translateY(3px);
+}
+#b1:hover{
+    border: solid 1px red;
+}
+#b1:active{
+    background: red;
+    transform: translateY(3px);
+}
+#b2:hover{
+    border: solid 1px blue;
+}
+#b2:active{
+    background: blue;
+    transform: translateY(3px);
+}
+#b3:hover{
+    border: solid 1px yellow;
+}
+#b3:active{
+    background: yellow;
+    transform: translateY(3px);
 }
 #start{
     height: 25px;
@@ -46,3 +74,8 @@
              4px 4px 5px rgba(0,0,0,0.7),
              0px 0px 7px rgba(0,0,0,0.4);
 }
+
+
+/* //     $('#b1').css("background", "red"); 
+//     $('#b2').css("background", "blue");
+//     $('#b3').css("background", "yellow"); */

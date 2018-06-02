@@ -10,12 +10,11 @@ $(document).ready(function() {
     var intervalId;
 
 function colorGray(){
-    $('#b0').css("background", "gray");
-    $('#b1').css("background", "gray"); 
-    $('#b2').css("background", "gray");
-    $('#b3').css("background", "gray");
+    $('#b0').attr('style',' ');
+    $('#b1').attr('style',' ');
+    $('#b2').attr('style',' ');
+    $('#b3').attr('style',' ');
 }
-colorGray();
 
 // function colorBtn(x){
 //     let delay = setTimeout(function() {
@@ -68,6 +67,19 @@ $("#start").click(function(){
     counter();   
     
 });
+
+// $("#b0").click(function() {
+//     closeIt(1, false);
+// });
+// $("#b1").click(function() {
+//     closeIt(1, false);
+// });
+// $("#b2").click(function() {
+//     closeIt(1, false);
+// });
+// $("#b3").click(function() {
+//     closeIt(1, false);
+// });
 
 
 
