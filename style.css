@@ -1,7 +1,28 @@
 *{
 	margin: 0;
 	padding: 0;
+    font-family: 'Shadows Into Light', cursive;
+    background: black;
+    color: white;
+    text-shadow: -1px -1px 1px #aaa,
+            1px 1px 1px white,
+             0px 4px 1px rgba(0,0,0,0.5),
+             4px 4px 5px rgba(0,0,0,0.7),
+             0px 0px 7px rgba(0,0,0,0.4);
     }
+p{
+    font-size: 18px;
+    font-weight: bold;
+}
+span{
+    font-size: 16px;
+    font-style: italic;
+}
+#winOrLose{
+    font-size: 22px;
+    font-weight: bold;
+    color: orange;
+}
 #background {
     position: fixed;
     top: 50%;
@@ -26,6 +47,7 @@
 	text-align: center;	
 }
 .button {
+    border: 0;
     height: 225px;
     width: 250px;
     display: inline-block;
@@ -33,6 +55,7 @@
     box-shadow: 0px 3px 8px #43484c;
     border-radius: 15px 5px 15px 5px;
     background: gray;
+    
     }
 .button:nth-child(even){
     border-radius: 5px 15px 5px 15px;
@@ -66,11 +89,19 @@
     transform: translateY(3px);
 }
 #start{
-    height: 25px;
+    border: 1px solid white;
+    height: auto;
     width: 125px;
+    font-size: 20px;
+    margin-bottom: 5px;
     display: inline-block;
-    text-shadow: -1px -1px 1px #aaa,
-             0px 4px 1px rgba(0,0,0,0.5),
-             4px 4px 5px rgba(0,0,0,0.7),
-             0px 0px 7px rgba(0,0,0,0.4);
+    box-shadow: 0px 3px 8px white;
+}
+#start:hover{
+    border: 1px solid orange;
+}
+#start:active{
+    opacity: 0.2;
+    background: transparent;
+    transform: translateY(3px);
 }
