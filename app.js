@@ -7,8 +7,8 @@ var arrayCount = 0;
 var backgroundArr = ['green','red','blue','yellow'];
 var seconds = 4;
 var level = 4;
-var wins = 0;
-var end = false;
+var tries = 0;
+var end = true;
 //Document check
 $(document).ready(function() {
     var intervalId;
@@ -26,15 +26,28 @@ function winCondition(){
         console.log(answer1, answer2);
         if (answer1 === answer2){
             level++;
-            wins++;
-            $('#yourWins').text(wins);
+            tries++
+            $('#yourTries').text(tries);
             $('#yourLevel').text(level - 3);
             $('#winOrLose').text('You win! Press start to begin next level.');
             end = true;
         } else {
-            $('#winOrLose').text('You lose try again or start over!');
+            tries++;
+            $('#yourTries').text(tries);
+            $('#winOrLose').text('You lose try again or start over!');            
             answerL = [];
         }
+    }
+}
+function guessTrack(){
+    if (answerL.length === level + 1){
+        $('#yourGuess').empty();
+        $('#yourGuess').append(' X');
+    } else if (answerL.length === 1){
+        $('#yourGuess').empty();
+        $('#yourGuess').append(' X');
+    } else {
+        $('#yourGuess').append(' X');
     }
 }
 var counter = function() {
@@ -55,6 +68,7 @@ var counter = function() {
 //On click events
 $("#start").click(function(){
     $('#winOrLose').text('');
+    $('#yourGuess').empty();
     seconds = level;
     answerL = [];
     randomArr = [];
@@ -74,7 +88,8 @@ $("#b0").click(function() {
     if (end === false){
         let answer = $(this).attr("value");
         let intAnswer = parseInt(answer);
-        answerL.push(intAnswer);   
+        answerL.push(intAnswer);  
+        guessTrack(); 
         winCondition();  
     }  
 });
@@ -83,6 +98,7 @@ $("#b1").click(function() {
         let answer = $(this).attr("value");
         let intAnswer = parseInt(answer);
         answerL.push(intAnswer);
+        guessTrack()
         winCondition(); 
     }   
 });
@@ -91,6 +107,7 @@ $("#b2").click(function() {
         let answer = $(this).attr("value");
         let intAnswer = parseInt(answer);
         answerL.push(intAnswer);
+        guessTrack()
         winCondition(); 
     }   
 });
@@ -99,6 +116,7 @@ $("#b3").click(function() {
         let answer = $(this).attr("value");
         let intAnswer = parseInt(answer);
         answerL.push(intAnswer);
+        guessTrack()
         winCondition();
     }
 });
