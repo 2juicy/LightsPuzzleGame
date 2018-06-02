@@ -2,13 +2,16 @@
 var randomize = (Math.floor(Math.random() * 4));
 var randomC = randomize;
 randomArr = new Array();
+answerL = new Array();
 var arrayCount = 0;
 var backgroundArr = ['green','red','blue','yellow'];
 var seconds = 4;
+var level = 4;
+var wins = 0;
 //Document check
 $(document).ready(function() {
     var intervalId;
-
+//functions
 function colorGray(){
     $('#b0').attr('style',' ');
     $('#b1').attr('style',' ');
@@ -16,20 +19,21 @@ function colorGray(){
     $('#b3').attr('style',' ');
 }
 
-// function colorBtn(x){
-//     let delay = setTimeout(function() {
-//         colorGray();
-//         $("#b" + randomize).css('background', backgroundArr[randomArr[x]]);
-//     }, 1000);
-// }
-
-
-// let delay = setTimeout(function() {
-//     $('#b0').css("background", "green");
-//     $('#b1').css("background", "red"); 
-//     $('#b2').css("background", "blue");
-//     $('#b3').css("background", "yellow");
-// }, 3000);
+function winCondition(){
+    if (answerL.length === level){
+        let answer1 = answerL.toString();
+        let answer2 = randomArr.toString();
+        console.log(answer1, answer2);
+        if (answer1 === answer2){
+            level++;
+            wins++;
+            $('#yourWins').text(wins);
+            $('#winOrLose').text('You win! Press start to begin next level.');
+        } else {
+            $('#winOrLose').text('You lose try again or start over!');
+        }
+    }
+}
 
 var counter = function() {
     intervalId = setInterval(z, 1000);
@@ -41,9 +45,8 @@ var counter = function() {
             arrayCount++;
         } else if (seconds == 0) {
             clearInterval(intervalId);
-            seconds = 4;
+            seconds = level;
             arrayCount = 0;
-            randomArr = [];
             colorGray();            
         }
 }}
@@ -53,10 +56,15 @@ var counter = function() {
 
 
 
-
+//On click events
 $("#start").click(function(){
+    $('#winOrLose').text('');
+    seconds = 4;
+    answerL = [];
+    randomArr = [];
+    win = false;
     colorGray();
-    for (let i = 0; i < 4; i++){  
+    for (let i = 0; i < level; i++){  
         do {
             randomize = (Math.floor(Math.random() * 4)); 
         } while (randomize === randomC);
@@ -68,18 +76,35 @@ $("#start").click(function(){
     
 });
 
-// $("#b0").click(function() {
-//     closeIt(1, false);
-// });
-// $("#b1").click(function() {
-//     closeIt(1, false);
-// });
-// $("#b2").click(function() {
-//     closeIt(1, false);
-// });
-// $("#b3").click(function() {
-//     closeIt(1, false);
-// });
+$("#b0").click(function() {
+    let answer = $(this).attr("value");
+    let intAnswer = parseInt(answer);
+    answerL.push(intAnswer);
+   
+        winCondition();
+    
+});
+$("#b1").click(function() {
+    let answer = $(this).attr("value");
+    let intAnswer = parseInt(answer);
+    answerL.push(intAnswer);
+        winCondition();
+    
+});
+$("#b2").click(function() {
+    let answer = $(this).attr("value");
+    let intAnswer = parseInt(answer);
+    answerL.push(intAnswer);
+        winCondition();
+    
+});
+$("#b3").click(function() {
+    let answer = $(this).attr("value");
+    let intAnswer = parseInt(answer);
+    answerL.push(intAnswer);
+        winCondition();
+
+});
 
 
 
