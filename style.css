@@ -44,6 +44,9 @@ span{
     text-align: center;
     padding-bottom: 1em;
     }
+.clear{
+    clear: both;
+}
 .center, h1{
 	text-align: center;	
 }
@@ -55,8 +58,7 @@ span{
     margin: 0px 2px 0px 2px;
     box-shadow: 0px 3px 8px #43484c;
     border-radius: 15px 5px 15px 5px;
-    background: gray;
-    
+    background: gray;  
     }
 .button:nth-child(even){
     border-radius: 5px 15px 5px 15px;
@@ -122,3 +124,44 @@ span{
       75%  {background: green;}
       100% {background: rgb(170, 228, 77);}
     }
+    @media screen and (max-width: 950px) {
+    .button {
+        height: 185px;
+        width: 185px;
+        margin: 0.5px 3px 0.5px 3px;
+        text-align: center;
+    }
+}
+    @media screen and (max-width: 789px) {
+    .container{
+        float: left;
+    }
+    .button {
+        height: 270px;
+        width: 270px;
+        margin: 0.5px 1px 0.5px 1px;
+        text-align: center;
+    }
+}
+    @media screen and (max-width: 550px) {
+     .container{
+        float: left;
+    }
+    .button {
+        height: 200px;
+        width: 200px;
+        margin: 0.5px 0.5px 0.5px 0.5px;
+        text-align: center;      
+    }   
+}
+@media screen and (max-width: 420px) {
+     .container{
+        float: left;
+    }
+    .button {
+        height: 155px;
+        width: 155px;
+        margin: 0px;
+        text-align: center;      
+    }   
+}
