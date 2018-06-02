@@ -15,10 +15,7 @@ $(document).ready(function() {
     var intervalId;
 //functions
 function colorGray(){
-    $('#b0').attr('style',' ');
-    $('#b1').attr('style',' ');
-    $('#b2').attr('style',' ');
-    $('#b3').attr('style',' ');
+    $('#b0, #b1, #b2, #b3').attr('style',' ');
 }
 function winCondition(){
     if (answerL.length === level){
@@ -42,12 +39,10 @@ function winCondition(){
 }
 function guessTrack(){
     if (answerL.length === level + 1){
-        $('#yourGuess').empty();
-        $('#yourGuess').append(' X');
+        $('#yourGuess').empty().append(' X');
     } else if (answerL.length === 1){
-        $('#yourGuess').empty();
+        $('#yourGuess').empty().append(' X');
         $('#winOrLose').text('');
-        $('#yourGuess').append(' X');
     } else {
         $('#yourGuess').append(' X');
     }
@@ -57,10 +52,7 @@ var counter = function() {
     function z(){
         if (seconds > 0){
             seconds--;
-            $('#b0').css('background','gray');
-            $('#b1').css('background','gray');
-            $('#b2').css('background','gray');
-            $('#b3').css('background','gray');
+            $('#b0, #b1, #b2, #b3').css('background','gray');
             $("#b" + randomArr[arrayCount]).css('background', backgroundArr[randomArr[arrayCount]]);
             arrayCount++;
         } else if (seconds == 0) {
