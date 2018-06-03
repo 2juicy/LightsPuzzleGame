@@ -14,9 +14,6 @@ var lightsOn = false;
 $(document).ready(function() {
     var intervalId;
 //functions
-function colorGray(){
-    $('#b0, #b1, #b2, #b3').attr('style',' ');
-}
 function winCondition(){
     if (answerL.length === level){
         let answer1 = answerL.toString();
@@ -62,7 +59,7 @@ var counter = function() {
             seconds = level;
             lightsOn = false;
             arrayCount = 0;
-            colorGray();            
+            $('#b0, #b1, #b2, #b3').attr('style',' ');          
         }
 }}
 //On click events
@@ -74,7 +71,7 @@ $("#start").click(function(){
         answerL = [];
         randomArr = [];
         end = false;
-        colorGray();
+        $('#b0, #b1, #b2, #b3').attr('style',' ');
         for (let i = 0; i < level; i++){  
             do {
                 randomize = (Math.floor(Math.random() * 4));
