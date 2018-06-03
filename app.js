@@ -35,6 +35,7 @@ function winCondition(){
             $('#winOrLose').text('You lose try again or start over!');            
             answerL = [];
         }
+        counter();
     }
 }
 function guessTrack(){
@@ -48,6 +49,7 @@ function guessTrack(){
     }
 }
 var counter = function() {
+    lightsOn = true;
     intervalId = setInterval(z, 1000);
     function z(){
         if (seconds > 0){
@@ -66,7 +68,6 @@ var counter = function() {
 //On click events
 $("#start").click(function(){
     if (lightsOn === false){
-        lightsOn = true;
         $('#winOrLose').text('');
         $('#yourGuess').empty();
         seconds = level;
@@ -76,7 +77,7 @@ $("#start").click(function(){
         colorGray();
         for (let i = 0; i < level; i++){  
             do {
-                randomize = (Math.floor(Math.random() * 4)); 
+                randomize = (Math.floor(Math.random() * 4));
             } while (randomize === randomC);
             randomArr.push(randomize);
             randomC = randomize;        
