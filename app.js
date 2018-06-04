@@ -3,7 +3,6 @@ var randomize = (Math.floor(Math.random() * 4));
 var randomC = randomize;
 randomArr = new Array();
 answerL = new Array();
-var answer = null;
 var arrayCount = 0;
 var backgroundArr = ['green','red','blue','yellow'];
 var seconds = 4;
@@ -88,7 +87,7 @@ $("#start").click(function(){
 });
 $("#b0 , #b1 , #b2 , #b3").click(function() {
     if (end === false && lightsOn === false){
-        answer = $(this).attr("value");
+        let answer = $(this).attr("value");
         if (answer == answerL[answerL.length-1]){
             return;
         }
