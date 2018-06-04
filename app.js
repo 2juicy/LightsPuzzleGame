@@ -3,6 +3,7 @@ var randomize = (Math.floor(Math.random() * 4));
 var randomC = randomize;
 randomArr = new Array();
 answerL = new Array();
+var answer = null;
 var arrayCount = 0;
 var backgroundArr = ['green','red','blue','yellow'];
 var seconds = 4;
@@ -15,6 +16,7 @@ $(document).ready(function() {
     var intervalId;
 //functions
 function winCondition(){
+    $('#b' + answerL[answerL.length-1]).css('background', 'gray');
     if (answerL.length === level){
         let answer1 = answerL.toString();
         let answer2 = randomArr.toString();
@@ -59,9 +61,10 @@ var counter = function() {
             seconds = level;
             lightsOn = false;
             arrayCount = 0;
-            $('#b0, #b1, #b2, #b3').attr('style',' ');          
+            $('#b0, #b1, #b2, #b3').attr('style',' ');        
         }
-}}
+    }
+}
 //On click events
 $("#start").click(function(){
     if (lightsOn === false){
@@ -85,7 +88,11 @@ $("#start").click(function(){
 });
 $("#b0 , #b1 , #b2 , #b3").click(function() {
     if (end === false && lightsOn === false){
-        let answer = $(this).attr("value");
+        answer = $(this).attr("value");
+        if (answer == answerL[answerL.length-1]){
+            return;
+        }
+        $('#b0, #b1, #b2, #b3').attr('style',' ');
         let intAnswer = parseInt(answer);
         answerL.push(intAnswer);  
         guessTrack(); 
