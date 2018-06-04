@@ -5,6 +5,7 @@ randomArr = new Array();
 answerL = new Array();
 var arrayCount = 0;
 var backgroundArr = ['green','red','blue','yellow'];
+var colorArr = ['G', 'R', 'B', 'Y'];
 var seconds = 4;
 var level = 4;
 var tries = 0;
@@ -38,12 +39,12 @@ function winCondition(){
 }
 function guessTrack(){
     if (answerL.length === level + 1){
-        $('#yourGuess').empty().append(' X');
+        $('#yourGuess').empty().append("<span style='color:" + backgroundArr[answerL[answerL.length-1]] + "'> " + colorArr[answerL[answerL.length-1]] + "</span>");
     } else if (answerL.length === 1){
-        $('#yourGuess').empty().append(' X');
+        $('#yourGuess').empty().append("<span style='color:" + backgroundArr[answerL[answerL.length-1]] + "'> " + colorArr[answerL[answerL.length-1]] + "</span>");
         $('#winOrLose').text('');
     } else {
-        $('#yourGuess').append(' X');
+        $('#yourGuess').append("<span style='color:" + backgroundArr[answerL[answerL.length-1]] + "'> " + colorArr[answerL[answerL.length-1]] + "</span>");
     }
 }
 var counter = function() {
