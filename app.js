@@ -39,7 +39,7 @@ function winCondition(){
 }
 function guessTrack(){
     if (answerL.length === level + 1){
-        $('#yourGuess').empty().append("<span style='color:" + backgroundArr[answerL[answerL.length-1]] + "'> " + colorArr[answerL[answerL.length-1]] + "</span>");
+        $('#yourGuess').empty().append(`<span style='color:${backgroundArr[answerL[answerL.length-1]]}'> ${colorArr[answerL[answerL.length-1]]}</span>`);
     } else if (answerL.length === 1){
         $('#yourGuess').empty().append("<span style='color:" + backgroundArr[answerL[answerL.length-1]] + "'> " + colorArr[answerL[answerL.length-1]] + "</span>");
         $('#winOrLose').text('');
